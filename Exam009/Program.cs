@@ -1,23 +1,23 @@
 ﻿// Вывод случайного числа [10,99] и вывод на печать наибольшего. Н., 78-> 8.
- 
-int randomNumber = GetRandomNumer(100, 1000);  // от 10 до 99
+
+int randomNumber = GetRandomNumer(10, 100);  // от 10 до 99
 Console.Write($"Рандомное число - {randomNumber}");
-int maxValue = FindMaxValue(151);
+Console.WriteLine();
+int maxValue = FindMaxValue(randomNumber);
 Console.WriteLine(maxValue);
 
-int FindMaxValue(int numberA);
-{
-    int max = numberA % 10;
-    numberA = numberA / 10;
-
-    while (numberA > 0)
+int FindMaxValue(int number)
+{        //151
+    int max = number % 10; //1
+    number = number / 10;  //15 
+    while (number > 0)     //15>0
     {
-        int lastNumber = numberA % 10;
-        if (lastNumber > max)
+        int lastNumber = number % 10;  //5
+        if (lastNumber > max)        //5>1
         {
-            max = lastNumber;
+            max = lastNumber;           //5
         }
-        numberA = numberA / 10;
+        number = number / 10;           //1
     }
     return max;
 }
