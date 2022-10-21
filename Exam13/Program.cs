@@ -11,22 +11,17 @@ internal class Program
         // Выбирает 3ю цифру из числа
         void PrintThirdDigit(int number)
         {
-            int leng = number.length;
+            string strNumber = Convert.ToString(number);
+            int strLen = strNumber.Length;
 
-            if (leng < 3)
-                string result = "3й цифры нет";
+            if (strLen < 3)
+                Console.WriteLine("3й цифры нет");
             else
             {
-                string strNumber = Convert.ToString(number);
-                // int[] array=new int[3];
-                //for (int i = 0; i < array.Length; i++)
-                //{
-                string result = strNumber.ToCharArray[3];
-                // }
+               strNumber=strNumber.Substring(2, 1);
+               Console.WriteLine(strNumber);
             }
-
-
-          //  return result;
+                
         }
 
         // Выдает рандомное число в заданном диапазоне
